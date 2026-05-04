@@ -24,6 +24,9 @@ PS C:\...\> docker compose up -d
 PS C:\...\backend> compiledaemon --command="./backend"
 ```
 
+Frontend: "http://localhost:3001"
+Backend: "http://localhost:3000"
+
 ## Technologien
 
 ### Frontend: 
