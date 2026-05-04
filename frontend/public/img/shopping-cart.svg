@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="670"
+   height="620"
+   viewBox="0 0 20.1 18.6"
+   fill="none"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="shopping-cart.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:export-bgcolor="#ffffff00">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="20.1"
+       height="18.6"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     clip-path="url(#clip0_15_35)"
+     id="g3"
+     transform="translate(-1.3879271,-3.2805549)">
+    <rect
+       width="24"
+       height="24"
+       fill="#ffffff"
+       id="rect1"
+       x="0"
+       y="0" />
+    <path
+       d="M 5.33331,6 H 19.8672 c 0.6015,0 1.0669,0.52718 0.9923,1.12403 l -0.75,5.99997 C 20.0469,13.6245 19.6215,14 19.1172,14 H 16.5555 9.44442 7.99998"
+       stroke="#000000"
+       stroke-linejoin="round"
+       id="path1" />
+    <path
+       d="M 2,4 H 4.23362 C 4.68578,4 5.08169,4.30341 5.19924,4.74003 L 8.30076,16.26 C 8.41831,16.6966 8.81422,17 9.26638,17 H 19"
+       stroke="#000000"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path2" />
+    <circle
+       cx="10"
+       cy="20"
+       r="1"
+       stroke="#000000"
+       stroke-linejoin="round"
+       id="circle2" />
+    <circle
+       cx="17.5"
+       cy="20"
+       r="1"
+       stroke="#000000"
+       stroke-linejoin="round"
+       id="circle3" />
+  </g>
+  <defs
+     id="defs3">
+    <clipPath
+       id="clip0_15_35">
+      <rect
+         width="24"
+         height="24"
+         fill="#ffffff"
+         id="rect3"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+</svg>
