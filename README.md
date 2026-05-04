@@ -1,13 +1,21 @@
 # Full-Stack-E-Commerce
 
+
+## Voraussetzungen
+- Node.js
+- npm
+
+## Installation & Starten
+
+```bash
+PS C:\...\frontend> npm install
+PS C:\...\frontend> npm start
+
+
 ## Technologien
 
-- Frontend: React
-- Backend: Go + Gin Web Framework
-- Datenbank: PostgreSQL
-- Container: Docker Compose
-
-(- ORM (Objekt-Relation Mapping): GORM)
+Frontend: 
+- React
 
 
 
