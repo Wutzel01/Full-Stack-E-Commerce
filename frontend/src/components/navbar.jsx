@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from "../context/authContext";
 import './navbar.css';
@@ -5,13 +6,40 @@ import './navbar.css';
 function Navbar() {
   const navigate = useNavigate();
   const { isAuthenticated, isAuthLoading } = useAuth();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const searchRef = useRef(null);
+
+  // Event, außerhalb Suchleiste geklickt
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        isSearchOpen &&
+        searchRef.current &&
+        !searchRef.current.contains(event.target)
+      ) {
+        setIsSearchOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSearchOpen]);
 
   function handleAccountClick() {
     if (isAuthLoading) {
       return;
     }
-
     navigate(isAuthenticated ? "/account" : "/register");
+  }
+
+  function handleSearchButtonClick(event) {
+    if (!isSearchOpen) {
+      event.preventDefault();
+      setIsSearchOpen(true);
+    }
   }
 
   
@@ -19,7 +47,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid navbar-container">
         <NavLink className="navbar-brand" to="/">
-          B2B Penguin Shop
+          Pinguin Shop
         </NavLink>
               
         <button 
@@ -37,7 +65,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className="nav-link active" to="/"> {/*aria-current="page" href="/"*/}
+              <NavLink className="nav-link active" to="/">
                 Home
               </NavLink>
             </li>
@@ -48,25 +76,35 @@ function Navbar() {
               </NavLink>
             </li>
           </ul>
-
-          {/* Suchleiste */}
-          <form className="navbar-search" role="search">
-            <input
-              className="navbar-search-input form-control"
-              type="search"
-              placeholder="Produkt, Artikelnummer, Hersteller, ..."
-              aria-label="Search"
-            />
-
-            <button className="btn btn-success navbar-search-button" type="submit" aria-label="Suchen">
-              <img 
-                src="/img/search.svg"
-                alt=""
-                className="navbar-search-icon"
-              />
-            </button>
-          </form>
         </div>
+        
+        {/* Suchleiste */}
+        <form 
+          ref={searchRef}
+          className={`navbar-search ${isSearchOpen ? "navbar-search-open" : ""}`} 
+          role="search"
+        >
+          <input
+            className="navbar-search-input form-control"
+            type="search"
+            placeholder="Produkt, Artikelnummer, Hersteller, ..."
+            aria-label="Search"
+          />
+
+          <button 
+            className="btn btn-success navbar-search-button" 
+            type="submit" 
+            aria-label="Suchen"
+            onClick={handleSearchButtonClick}
+          >
+            <img 
+              src="/img/search.svg"
+              alt=""
+              className="navbar-search-icon"
+            />
+          </button>
+        </form>
+        
 
         {/* User-Account Icon */}
         <div className="navbar-user-area">
