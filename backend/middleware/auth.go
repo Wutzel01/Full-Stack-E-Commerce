@@ -40,6 +40,7 @@ func Authenticate(c *gin.Context) {
 		// Find the user with token sub
 		var user models.User
 		config.DB.First(&user, claims["sub"])
+		// SELECT * FROM "users" WHERE "users"."id" =
 
 		if user.ID == 0 {
 			c.AbortWithStatus(http.StatusUnauthorized)

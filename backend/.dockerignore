@@ -1,0 +1,5 @@
+.git
+backend.exe
+backend.exe~
+*.exe
+*.log

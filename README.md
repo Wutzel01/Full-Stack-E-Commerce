@@ -1,31 +1,33 @@
 # Full-Stack-E-Commerce
 
 
-## Voraussetzungen
-- Node.js
-- npm
+## Bedienung
 
-## Installation & Starten
-
-### Frontend:
+### Initialisieren
 ```bash
-PS C:\...\frontend> npm install
-PS C:\...\frontend> npm start
+PS C:\...\> docker compose up --build
 ```
 
-### Backend:
-- Datenbank in Docker starten
+### Starten
 ```bash
-PS C:\...\> docker compose up -d
+PS C:\...\> docker compose up
 ```
 
-- CompileDaemon starten
+- Frontend: http://localhost:3001
+- Backend: http://localhost:3000
+- PostgreSQL: localhost:5432
+
+### Stoppen
+
 ```bash
-PS C:\...\backend> compiledaemon --command="./backend"
+PS C:\...\> docker compose down 
 ```
 
-Frontend: "http://localhost:3001"
-Backend: "http://localhost:3000"
+### Datenbank zurücksetzen
+```bash
+PS C:\...\> docker compose down -v
+```
+
 
 ## Technologien
 

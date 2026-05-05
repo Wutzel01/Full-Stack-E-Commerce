@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"time"
 
 	"github.com/Wutzel01/Full-Stack-E-Commerce/backend/config"
@@ -28,9 +29,18 @@ func main() {
 		MaxAge:           12 * time.Hour,
 	}))
 
+	r.GET("/health", func(c *gin.Context) {
+		c.JSON(200, gin.H{"status": "ok"})
+	})
+
 	r.POST("/signup", controllers.Signup)
 	r.POST("/login", controllers.Login)
 	r.GET("/validate", middleware.Authenticate, controllers.Validate)
 
-	r.Run() // listen and serve on 0.0.0.0:8080
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	r.Run(":" + port) // listen and serve on 0.0.0.0:3001
 }

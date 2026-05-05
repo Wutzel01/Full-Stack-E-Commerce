@@ -1,0 +1,18 @@
+# Latest golang image on apline linux
+FROM golang:1.26-alpine
+
+# Work directory
+WORKDIR /app
+
+# Installing dependencies
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copying all the files
+COPY . .
+
+# Exposing server port
+EXPOSE 3000
+
+# Starting our application
+CMD ["go", "run", "main.go"]
