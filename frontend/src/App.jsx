@@ -9,7 +9,7 @@ import Cart from './pages/cart';
 import Login from './pages/login';
 import Register from './pages/register';
 import AccountSettings from "./pages/accountSettings.jsx";
-import ProtectedRoute from "./routes/protectedRoutes";
+//import ProtectedRoute from "./routes/protectedRoutes";
 import NotFound from './pages/notFound';
 
 function App()
@@ -22,14 +22,15 @@ function App()
         <Route path="/cart" element={<Cart />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route
+        <Route path="/account" element={<AccountSettings />} />
+        {/*<Route
           path="/account"
           element={
             <ProtectedRoute>
               <AccountSettings />
             </ProtectedRoute>
           }
-        />
+        />*/}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

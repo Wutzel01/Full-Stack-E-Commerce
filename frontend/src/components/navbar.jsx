@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from "../context/authContext";
+import { useCart } from "../context/cartContext";
 import './navbar.css';
 
 function Navbar() {
   const navigate = useNavigate();
   const { isAuthenticated, isAuthLoading } = useAuth();
+  const { totalQuantity } = useCart();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const searchRef = useRef(null);
 
@@ -125,7 +127,7 @@ function Navbar() {
 
           <NavLink
             to="/cart"
-            className="btn btn-light border navbar-icon-button"
+            className="btn btn-light border navbar-icon-button cart-icon-button"
             title="Warenkorb"
             aria-label="Warenkorb anzeigen"
           >
@@ -134,6 +136,7 @@ function Navbar() {
               alt=""
               className="navbar-icon"
             />
+            {totalQuantity > 0 && <span className="cart-badge">{totalQuantity}</span>}
           </NavLink>
 
         </div>

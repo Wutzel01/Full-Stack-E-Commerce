@@ -7,7 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle.js"
 
 import App from "./App";
 import { AuthProvider } from './context/authContext';
-
+import { CartProvider } from './context/cartContext';
 
 const root = createRoot(document.getElementById("root"));
 
@@ -15,7 +15,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
